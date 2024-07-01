@@ -1,13 +1,17 @@
 package ers.screenmatch;
 
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Serie {
 
     private Titulo titulo;
     private  int temporadas;
     private int episiodioPorTemporada;
-    private int duracaoEmMinuros;
     private  boolean statusAtividade;
     private int minutosPorEpisodio;
+    private List<Episodio> episodios = new ArrayList<>();
 
 
     public Serie(Titulo titulo, int temporadas, int episiodioPorTemporada, int minutosPorEpisodio, boolean statusAtividade) {
@@ -19,10 +23,18 @@ public class Serie {
     }
 
     public int getDuracaoEmMinuros() {
-        duracaoEmMinuros = (minutosPorEpisodio*episiodioPorTemporada)*temporadas;
-        return duracaoEmMinuros;
+        titulo.setDuracaoEmMinutos( (minutosPorEpisodio*episiodioPorTemporada)*temporadas);
+        return titulo.getDuracaoEmMinutos();
     }
 
+    public List<Episodio> getEpisodios() {
+        return episodios;
+    }
+
+    public void setEpisodios(Episodio episodios) {
+
+        this.episodios.add(episodios);
+    }
 
     public Titulo getTitulo() {
         return titulo;

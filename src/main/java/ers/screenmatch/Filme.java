@@ -3,22 +3,16 @@ package ers.screenmatch;
 public class Filme {
 
    private Titulo titulo;
-   private  int duracaoMinutos;
+
    private String diretor;
 
-    public Filme(Titulo titulo, String diretor, int duracaoMinutos) {
+    public Filme(Titulo titulo, String diretor) {
         this.titulo = titulo;
         this.diretor = diretor;
-        this.duracaoMinutos = duracaoMinutos;
+
     }
 
-    public int getDuracaoMinutos() {
-        return duracaoMinutos;
-    }
 
-    public void setDuracaoMinutos(int duracaoMinutos) {
-        this.duracaoMinutos = duracaoMinutos;
-    }
 
     public Titulo getTitulo() {
         return titulo;

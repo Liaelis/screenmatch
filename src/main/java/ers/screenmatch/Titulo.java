@@ -9,10 +9,22 @@ public class Titulo implements Avalicao {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
-    public Titulo(String nome, int anoDeLancamento) {
+    public Titulo(String nome, int anoDeLancamento, int duracaoEmMinutos) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
         this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+
+    }
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
     }
 
     public boolean isIncluidoNoPlano() {
@@ -56,5 +68,10 @@ public class Titulo implements Avalicao {
     public void getFichaTecnica() {
         System.out.println(nome);
         System.out.println(anoDeLancamento);
+    }
+
+    @Override
+    public int getClassificacao() {
+       return (int) (pegaMedia()/2);
     }
 }
