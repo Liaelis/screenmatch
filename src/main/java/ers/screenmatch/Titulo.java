@@ -1,6 +1,6 @@
 package ers.screenmatch;
 
-public class Titulo implements Avalicao {
+public class Titulo implements Avalicao, Comparable<Titulo> {
 
     private String nome;
     private int anoDeLancamento;
@@ -73,5 +73,15 @@ public class Titulo implements Avalicao {
     @Override
     public int getClassificacao() {
        return (int) (pegaMedia()/2);
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+
+        return this.getNome().compareTo(outroTitulo.getNome());
+    }
+    @Override
+    public String toString() {
+        return "Filme: " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
     }
 }
