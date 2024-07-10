@@ -1,8 +1,12 @@
-package ers.screenmatch;
+package ers.screenmatch.modelo;
+
+import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Avalicao, Comparable<Titulo> {
 
+    @SerializedName("Title")
     private String nome;
+
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -13,6 +17,11 @@ public class Titulo implements Avalicao, Comparable<Titulo> {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
         this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+    public Titulo(TituloOmdb tituloOmdb){
+        this.nome = tituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf(tituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(tituloOmdb.runTime().substring(0,2));
     }
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;

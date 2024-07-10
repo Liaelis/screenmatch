@@ -1,4 +1,4 @@
-package ers.screenmatch;
+package ers.screenmatch.modelo;
 
 public class Filme {
 

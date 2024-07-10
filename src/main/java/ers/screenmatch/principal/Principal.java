@@ -1,7 +1,10 @@
-package ers.screenmatch;
+package ers.screenmatch.principal;
 
 import ers.screenmatch.calculo.CalculadoraDeTempo;
 import ers.screenmatch.calculo.FiltroDeRecomendacao;
+import ers.screenmatch.modelo.Filme;
+import ers.screenmatch.modelo.Serie;
+import ers.screenmatch.modelo.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;

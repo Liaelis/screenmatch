@@ -1,8 +1,6 @@
 package ers.screenmatch.calculo;
 
-import ers.screenmatch.Filme;
-import ers.screenmatch.Serie;
-import ers.screenmatch.Titulo;
+import ers.screenmatch.modelo.Titulo;
 
 public class CalculadoraDeTempo {
 

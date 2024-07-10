@@ -1,6 +1,6 @@
 package ers.screenmatch.calculo;
 
-import ers.screenmatch.Avalicao;
+import ers.screenmatch.modelo.Avalicao;
 
 public class FiltroDeRecomendacao {
     private String recomendacao;

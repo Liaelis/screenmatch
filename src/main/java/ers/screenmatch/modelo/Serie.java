@@ -1,6 +1,5 @@
-package ers.screenmatch;
+package ers.screenmatch.modelo;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 
