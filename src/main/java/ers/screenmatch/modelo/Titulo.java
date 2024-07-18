@@ -1,10 +1,11 @@
 package ers.screenmatch.modelo;
 
 import com.google.gson.annotations.SerializedName;
+import ers.screenmatch.excecao.ErroDeConversaoDeAnoException;
 
 public class Titulo implements Avalicao, Comparable<Titulo> {
 
-    @SerializedName("Title")
+
     private String nome;
 
     private int anoDeLancamento;
@@ -20,8 +21,12 @@ public class Titulo implements Avalicao, Comparable<Titulo> {
     }
     public Titulo(TituloOmdb tituloOmdb){
         this.nome = tituloOmdb.title();
+        if(tituloOmdb.year().length() > 4) {
+            throw new ErroDeConversaoDeAnoException("Não consegui converter o ano " +
+                    "porque tem mais de 04 caracteres.");
+        }
         this.anoDeLancamento = Integer.valueOf(tituloOmdb.year());
-        this.duracaoEmMinutos = Integer.valueOf(tituloOmdb.runTime().substring(0,2));
+      //  this.duracaoEmMinutos = Integer.valueOf(tituloOmdb.runTime().substring(0,2));
     }
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
